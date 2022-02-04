@@ -1,2 +1,2 @@
 # ElnaPracticeForStudents
-Практика в Элна груп
+Практика в Элна групп
