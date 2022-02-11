@@ -1,0 +1,6 @@
+ParameterDto
+	>commonClasses
+		>BaseIm
+Функции
+	public uint Parameter	|	{ get; set; }
+						Создаём функцию для передачи данных

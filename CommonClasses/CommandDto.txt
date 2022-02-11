@@ -1,0 +1,10 @@
+public class CommandDto
+		>commonClasses
+			>BaseIm
+функции	
+	public CommandTypes		|	CommandType { get; set; }
+	public uint Code 		|	{ get; set; }
+	public NodeTypes NodeType	|	{ get; set; }
+	public string CompName		|	{ get; set; }
+	public string UserName		|	{ get; set; }
+								Создаём функции для передачи данных, между подсиситемами для ввывода логов
