@@ -1,0 +1,73 @@
+Analog.cs
+>Analog
+	>VisualFbs
+	
+
+	PUBLIC CLASS Analog: BaseIm
+	
+	Поля:
+	
+	public string				|		measure { get; set; }
+											-единица измерения
+											
+	private string				|		_smalTxt
+											-Короткое название имени объекта
+	
+	private string 				|		_longTxt
+											-Длинное название имени объекта
+											
+	public new string 			|		longTxt { get; set; }
+											-проверяет на пустоту и задает значение _longTxt
+											
+	private bool 				|		_disableControlLimits = true
+											-Отображение Отключения контроля границ
+											
+	private string 				|		_format = ""
+											-Формат отображения величины по умолчанию
+											
+	public string 				|		toolTipAdditionalTxt { get; set; }
+											-Дополнительное сообщение в подсказке
+											
+	public bool 				|		showLimitsAndMeasureOnMsg { get; set; }
+											-Вывод граничных значений и ед.измерения в сообщения
+											
+	private string  			|		_lwMsg = ""
+											-Сообщение для LW
+	private string 				|		_laMsg = ""
+											-Сообщение для LA
+	private string 				|		_hwMsg = ""
+											-Сообщение для HW
+	private string 				|		_haMsg = ""
+											-Сообщение для HA
+	private string 				|		_llMsg = ""
+											-Сообщение для LL
+	private string 				|		_hlMsg = ""
+											-Сообщение для HL
+											
+	public double 				|		cmdTimer { get; set; } = 50
+											-Задает время задержки до подачи команды на изменение уставок, в миллисекундах
+	private bool 				|		Remont
+											-объявление переменной ремонта
+	
+	Открытые функции:
+	
+	public 											|		Analog() 
+																-переприсваивание значения интервала
+	public override SpecialCommandDescriptor[]		|		getSpecialCommands()
+																-создание дескрипторов для команд
+	internal class									|		DisabledIntevals 
+																-Отключение интервалов LA/LW/HW/HA
+	private void									|		processEventsDisabledIntervals(uint interval, bool newValue)
+																-Переключение контроля границ
+	protected override void							|		ParseStatus(IntParser status, DateTime timeStamp)
+																-Парсирование состояние, проверка интервала 
+	private void									|		GetLimits()
+																-получение границ
+	private void									|		UpdateInterval(Intervals interval)
+																-Обновление интервала, если не в состоянии ремонта
+	protected override void							|		StatusNotReliable()
+																-рекурсивная функция статуса ненадежности
+	private void									|		WriteValueToArchive(Intervals interval)
+																-запись значений в архив
+	protected override void							|		VisualCmdReseived(CommandDto cmd, JToken parameters)
+																-задание значений установок
