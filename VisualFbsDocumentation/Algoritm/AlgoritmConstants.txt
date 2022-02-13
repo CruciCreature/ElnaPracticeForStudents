@@ -1,0 +1,43 @@
+AlgoritmConstants.cs
+> BASEIM
+	> VisualFBBase
+	
+	Поля:
+	
+		static class pins
+
+			public const int				|				Start = 10
+			public const int				|				Error = 11
+			public const int				|				Top = 12
+																Объявление констант пинов
+    static class Vpins
+ 
+			public const int				|				Start = 10
+			public const int				|				Error = 11
+			public const int				|				Top = 12
+
+			public const int				|				AlgStart = 13
+			public const int				|				AlgEnd = 14
+			public const int				|				AlgError = 15
+			public const int				|				CanRun = 16
+																Объявление констант визуальных пинов
+    static class Events
+
+			public const int				|				Start = 10
+			public const int				|				Top = 11
+			public const int				|				Reset = 12
+			public const int				|				FasaStart = 13
+			public const int				|				FasaError = 14
+			public const int				|				FazaStop = 15
+			public const int				|				AlgError = 15
+																Объявление констант событий
+
+    static class settigs
+
+			public const double				|				freq = 1
+																Объявление константы настроек
+    static class Commands
+   
+			public const uint				|				start = 1
+			public const uint				|				reset = 2
+																Объявление констант команд
