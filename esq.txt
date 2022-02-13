@@ -1,6 +1,0 @@
-<<<<<<< HEAD
-123
-2
-=======
-churki pidorasi
->>>>>>> c5a73570b2aa068eb547a13834de77a158bb486d
