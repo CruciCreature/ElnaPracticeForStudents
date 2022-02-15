@@ -1,0 +1,57 @@
+AnalogControl.cs
+>Analog
+	>VisualFbs
+	
+
+	PUBLIC CLASS AnalogCotrol: BaseWindowlessControl
+	
+Поля:
+	
+	private static readonly ILog		|		log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType)
+									-запись логов
+											
+	private Font				|		_font = new Font(CommonSettings.fontName, 15)
+									-шрифт
+	
+	private string 				|		_valueFormat
+									-Формат значения
+											
+	public int				|		TextWidth { get; set; }
+									-Ширина обозначения
+											
+	public int 				|		ValueWidth { get; set; }
+									-Ширина значения
+											
+	public int				|		MeasureWidth { get; set; }
+									-Ширина единицы измерения
+											
+	public enum nameText			|		{ smalText, LongText, objectStateText }
+									-Что писать в поле обозначения
+											
+	public nameText				|		selText { get; set; }
+									-Подпись
+	
+	Открытые функции:
+	
+	protected override void			|		OnLoadComplete()
+									-присваивание значений для интерфейса
+	protected override void			|		OnPaint(PaintEventArgs e)
+									-функция отрисовки
+	private string				|		GetValueFormat()
+									-получение формата значения
+	private void				|		updateData()
+									-Обновление данных
+	public void				|		updateLimits()
+									-Обновление границ
+	private bool				|		AppendLimitToTooltip(double value, string name, StringBuilder builder, bool secondEntry)
+									-Внесение границ
+	protected override void			|		OnVisibleChanged(bool visible)
+									-Обновление визуала, если окно не равно нулю
+	protected override void			|		ToRuntime()
+									-Вызов панели управления
+	private void				|		Commands_AllCommandsDisableChanged(bool enabled)
+									-вызывает перерисовку окна
+	protected override void			|		ToDesign()
+									-отрисовка
+	protected override void			|		OnMouseDown(MouseEventArgs me)
+									-Открытие окна отрисовки

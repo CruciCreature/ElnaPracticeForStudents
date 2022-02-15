@@ -1,0 +1,100 @@
+AnalogDrawingLineControl.cs
+>Analog
+	>VisualFbs
+	
+
+	PUBLIC CLASS AnalogLineControl : BaseWindowlessControl
+	
+Поля:
+	
+											
+	private static readonly ILog		|		log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType)
+									-переменная для логов
+	public Font 				|		valueFont { get; set; } = new Font(CommonSettings.fontName, 12)
+									-Шрифт значения
+	public Font				|		lineFont { get; set; } = new Font(CommonSettings.fontName, 8)
+									-Шрифт линейки
+	public bool 				|		drawBorder { get; set; }
+									-Рисование рамки
+	private bool				|		showValuetText { get; set; }
+									-показывать значение текста
+	private string				|		valueFormat { get; set; }
+									-формат значения
+	
+функции:
+	
+	protected override void			|		OnPaint(PaintEventArgs e)
+									-отрисовка
+
+	private void				|		updateData()
+									-Обновление данных
+
+	private bool				|		 AppendLimitToTooltip(double value, string name, StringBuilder builder, bool secondEntry)
+									-Внесение границ
+
+	private string				|		GetValueFormat()
+									-Получение формата значения
+
+	private void				|		calkMetrics(Graphics g)
+									-вычисление метрик
+
+	private void				|		drawLine(Graphics g, RectangleF rect)
+									-Отрисовка линейки
+
+	private void				|		drawMarks(Graphics g, RectangleF lineRect)
+									-Отрисовка меток
+	INTERNAL CLASS MarkParameters:
+
+Поля:
+
+	public float		|		top
+        public float		|		bottom
+        public bool		|		end
+        public bool		|		drawValue
+
+функции:
+
+	public			|		MarkParameters(float top, float bottom, bool end, bool drawValue)
+							-присваивание локальным переменным значения, границы и конец отрисовки
+
+	private void		|		drawMark(Graphics g, double hiLim, double lowLim, int level, Func<int, MarkParameters> parameters)
+							-Отрисовка марки
+
+	private void		|		drawLimits(Graphics g, RectangleF lineRect)
+							-Отрисовка границ
+
+	private void		|		drawLimit(Graphics g, Color color, double value, RectangleF lineRect)
+							-Конец отрисовки
+
+	private void		|		drawValue(Graphics g, RectangleF lineRect)
+							-Отрисовка значения
+
+	INTERNAL CLASS RealToView:
+
+Поля:
+
+	private float		|		k
+        private float		|		b
+        private float		|		RealLowLimit
+        private float		|		RealHighLimit
+	private float		|		ViewLowLimit
+        private float		|		ViewHighLimit
+
+функции:
+
+	public float			|		Convert(double RealPoint)
+								-Конвертация точки отрисовки из из реальной в видимую и наоборот
+
+	protected override void		|		OnVisibleChanged(bool visible)
+								-Обновление или закрытие окна при изменениях
+
+	protected override void		|		ToRuntime()
+								-Вызов панели управления
+
+	private void			|		Commands_AllCommandsDisableChanged(bool enabled)
+								-вызывает перерисовку окна
+
+	protected override void		|		ToDesign()
+								-отрисовка
+	protected override void		|		OnMouseDown(MouseEventArgs me)
+								-Открытие окна отрисовки

@@ -1,0 +1,12 @@
+AnalogCommandsBuilder.cs
+>Analog
+	>VisualFbs
+	
+Class AnalogCommandsBuilder : StandartCommandsBuilder
+
+функции:
+	
+	public 				|		AnalogCommandsBuilder(VisualFBConnector FBConnector) : base(FBConnector)
+							-пустая функция
+	public override ICommand	|		CreateSpecificCommand(CommandItem item)
+							-создание скрытой команды при соответствии значений команд константам

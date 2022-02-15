@@ -1,0 +1,125 @@
+AnalogConstants.cs
+>Analog
+	>VisualFbs
+
+Поля: 
+
+public enum Intervals:
+	
+	int32		|		notDefined = 0
+	int32		|		LL = 1
+	int32		|		HH = 2
+	int32		|		notReliable = 3
+	int32		|		normal = 4
+	int32		|		LW = 5
+	int32		|		HW = 6
+	int32		|		LA = 7
+	int32		|		HA = 8
+
+public enum AnalogLimitFlags : uint:
+    
+	int32		|        NONE = 0
+	int32		|        LL = 0x1
+	int32		|        LW = 0x2
+	int32		|        HW = 0x4
+	int32		|        LA = 0x8
+	int32		|        HA = 0x10
+	int32		|        HL = 0x20
+    
+
+    class pins:
+    
+        public const int		|		 Value = 3
+        public const int		|		 Status = 1
+        public const int		|		 Command = 2
+
+        public const int		|		 groupRead = 103
+        public const int		|		 groupWrite = 104
+
+        public const int		|		 LL = 12
+        public const int		|		 LA = 13
+        public const int		|		 LW = 14
+        public const int		|		 HW = 15
+        public const int		|		 HA = 16
+        public const int		|		 HH = 17
+
+        public const int		|		 nLL = 20
+        public const int		|		 nLA = 21
+        public const int		|		 nLW = 22
+        public const int		|		 nHW = 23
+        public const int		|		 nHA = 24
+        public const int		|		 nHH = 25
+
+        public const int		|		 groupArchive = 105
+        public const int		|		 outValue = 50
+        public const int		|		 outInterval = 51
+
+        public const int		|		 oValue = 40
+        public const int		|		 oLL = 41
+        public const int		|		 oLA = 42
+        public const int		|		 oLW = 43
+        public const int		|		 oHW = 44
+        public const int		|		 oHA = 45
+        public const int		|		 oHH = 46
+    
+    class Vpins:
+    
+        public const int		|		 Value = 10
+        public const int		|		 Interval = 11
+
+        public const int		|		 LL = 12
+        public const int		|		 LA = 13
+        public const int		|		 LW = 14
+        public const int		|		 HW = 15
+        public const int		|		 HA = 16
+        public const int		|		 HH = 17
+
+        public const int		|		 nLL = 20
+        public const int		|		 nLA = 21
+        public const int		|		 nLW = 22
+        public const int		|		 nHW = 23
+        public const int		|		 nHA = 24
+        public const int		|		 nHH = 25
+        public const int		|		 flags = 26
+
+        public const int		|		 remont = 40
+        public const int		|		 disabledIntervals = 41
+    
+
+    class Events:
+    
+        public const int		|		 LA = 11
+        public const int		|		 LW = 12
+        public const int		|		 HW = 13
+        public const int		|		 HA = 14
+        public const int		|		 Remont = 15
+        public const int		|		 IntevalDisabled = 16
+        public const int		|		 notReliable = 17
+        public const int		|		 LL = 18
+        public const int		|		 HL = 19
+    
+
+    class visualCommands:
+    
+        public const uint		|		 changeUstavki = 1
+        public const uint		|		 SetRemont = 2
+        public const uint		|		 ResetRemont = 3
+        public const uint		|		 Kvit = 4
+        public const uint		|		 SwitchRemont = 10
+    
+
+    class Commands:
+    
+        public const uint		|		 changeUstavki = 1
+        public const uint		|		 SetRemont = 2
+        public const uint		|		 ResetRemont = 3
+        public const uint		|		 Kvit = 4
+    
+
+    class DisabledIntervalsValues:
+    
+        public const uint		|		 LW = 0x1
+        public const uint		|		 HW = 0x2
+        public const uint		|		 LA = 0x4
+        public const uint		|		 HA = 0x8
+    

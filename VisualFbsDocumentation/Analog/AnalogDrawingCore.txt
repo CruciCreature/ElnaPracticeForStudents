@@ -1,0 +1,60 @@
+AnalogDrawingCore.cs
+>Analog
+	>VisualFbs
+	
+
+	PUBLIC CLASS AnalogDrawingCore
+	
+Поля:
+	
+											
+	public Font				|		font { get; set; } = new Font(CommonSettings.fontName, 12)
+									-шрифт
+	public bool 				|		remont { get; set; }
+									-состояние ремонта
+	public string				|		caption { get; set; }
+									-подпись
+	public string 				|		measure { get; set; }
+									-единица измерения
+	public Intervals			|		interval { get; set; }
+									-интервал
+	public int				|		TextWidth { get; set; }
+									-ширина текста		
+	public int 				|		ValueWidth { get; set; }
+									-ширина значения
+	public int 				|		MeasureWidth { get; set; }
+									-ширина измерения
+	public int 				|		valueFormat { get; set; }
+									-формат значения
+	public int 				|		value{ get; set; }
+									-значение
+	private Image 				|		remontPict
+									-Изображение состояния ремонта
+	
+	Открытые функции:
+	
+	public					|		AnalogDrawingCore()
+									-Получение сборки содержащей выполняемый код и передача src gif ремонта
+
+	private enum txtAlign			|		{ none, left, right };
+									-функция выставление отступа
+	private void				|		drawTxt(Graphics g, string txt, Rectangle txtRectangle, Color backColor, StringAlignment txtAlign)
+									-Отрисовка текста
+
+	private int				|		calcWidth(Graphics g, string txt, int width)
+									-вычисление ширины изображения
+
+	private void				|		drawPicts(Graphics g, Rectangle rect)
+									-отрисовка изображения
+
+	private static int			|		getDigitsCount(int number)
+									-вычисление количества цифр
+
+	public static string			|		getAutoFormat(double ll, double hl)
+									-вычисление формата изображения
+
+	public Rectangle			|		Draw(PaintEventArgs e, Rectangle Bounds)
+									-функция отрисовки прямоугольника
+
+	public static Color			|		getIntervalColor(Intervals interval)
+									-Получение цвета интервала в зависимости от состояния

@@ -1,0 +1,20 @@
+LimitsDto.cs
+>Analog
+	>VisualFbs
+	
+
+	CLASS LimitsDto
+	
+Поля:
+	
+											
+	public uint			|		Flags { get; set; } = new Font(CommonSettings.fontName, 12)
+								-Переменная для флагов
+	public double 			|		LL { get; set; }
+	public double			|		LA { get; set; }
+	public double 			|		LW { get; set; }
+	public double			|		HW { get; set; }
+	public double			|		HA { get; set; }	
+	public double 			|		HH { get; set; }
+								-Переменные пинов
+	

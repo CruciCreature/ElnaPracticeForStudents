@@ -5,7 +5,7 @@ Analog.cs
 
 	PUBLIC CLASS Analog: BaseIm
 	
-	Поля:
+Поля:
 	
 	public string				|		measure { get; set; }
 											-единица измерения
@@ -49,25 +49,25 @@ Analog.cs
 	private bool 				|		Remont
 											-объявление переменной ремонта
 	
-	Открытые функции:
+функции:
 	
-	public 											|		Analog() 
-																-переприсваивание значения интервала
+	public 							|		Analog() 
+											-переприсваивание значения интервала
 	public override SpecialCommandDescriptor[]		|		getSpecialCommands()
-																-создание дескрипторов для команд
-	internal class									|		DisabledIntevals 
-																-Отключение интервалов LA/LW/HW/HA
-	private void									|		processEventsDisabledIntervals(uint interval, bool newValue)
-																-Переключение контроля границ
-	protected override void							|		ParseStatus(IntParser status, DateTime timeStamp)
-																-Парсирование состояние, проверка интервала 
-	private void									|		GetLimits()
-																-получение границ
-	private void									|		UpdateInterval(Intervals interval)
-																-Обновление интервала, если не в состоянии ремонта
-	protected override void							|		StatusNotReliable()
-																-рекурсивная функция статуса ненадежности
-	private void									|		WriteValueToArchive(Intervals interval)
-																-запись значений в архив
-	protected override void							|		VisualCmdReseived(CommandDto cmd, JToken parameters)
-																-задание значений установок
+											-создание дескрипторов для команд
+	internal class						|		DisabledIntevals 
+											-Отключение интервалов LA/LW/HW/HA
+	private void						|		processEventsDisabledIntervals(uint interval, bool newValue)
+											-Переключение контроля границ
+	protected override void					|		ParseStatus(IntParser status, DateTime timeStamp)
+											-Парсирование состояние, проверка интервала 
+	private void						|		GetLimits()
+											-получение границ
+	private void						|		UpdateInterval(Intervals interval)
+											-Обновление интервала, если не в состоянии ремонта
+	protected override void					|		StatusNotReliable()
+											-рекурсивная функция статуса ненадежности
+	private void						|		WriteValueToArchive(Intervals interval)
+											-запись значений в архив
+	protected override void					|		VisualCmdReseived(CommandDto cmd, JToken parameters)
+											-задание значений установок

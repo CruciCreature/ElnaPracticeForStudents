@@ -1,0 +1,30 @@
+NewLimitsValidator.cs
+>Analog
+	>VisualFbs
+	
+
+	CLASS NewLimitsValidator
+	
+Поля:
+	
+											
+	public TextBox		|		txtLimit { get; set; }
+							-переменная лимита текста
+	public double[] 	|		allLimits { get; set; }
+							-переменная ограничений
+	public bool		|		IsValid { get; private set; }
+							-Переменная валидности
+	public string 		|		ReasonInvalid { get; private set; }
+							-Переменная причины неорректности введенных данных
+	private bool		|		showValuetText { get; set; }
+							-показывать значение текста
+	private int		|		IndexOfLimit { get; set; }
+							-Пременная индекса лимита
+	
+функции:
+	
+	public bool			|		Validate(string input, int indexOfLimit)
+								-Валидация введенного числа 
+
+	private bool			|		Validate(double value, int indexOfLimit)
+								-Валидация введенного значения
