@@ -1,0 +1,28 @@
+SetValueCommand.cs
+>AnalogParametr
+	>VisualFbs
+	
+
+	CLASS SetValueCommand: BaseCommand
+	
+
+Открытые функции:
+	
+	public					|		SetValueCommand(VisualFBConnector FBConnector, CommandItem command, Guid right) : base(FBConnector, command)
+									-присваивание значения команды FBConnector'а
+	protected override Control		|		CreateControl()
+									-Создание панели контроля
+	public BlockList			|		Blocks => Bloks
+									-получение в BlockList Блоков
+	private void				|		Send(double value, string measure)
+									-Функция присваивания значений
+	public void				|		Btn_Click(object sender, EventArgs e)
+									-Нажатие кнопки для изменения значений
+	private bool				|		AppendLimitToTooltip(double value, string name, StringBuilder builder, bool secondEntry)
+									-Внесение границ
+	private void				|		Panel_Disposed(object sender, EventArgs e)
+									-Удаление панели
+
+	iNTERNAL CLASS BtnPropertyes: CommandControlPropertyes
+Поля:
+            public TextBox		|		Value { get; set; }

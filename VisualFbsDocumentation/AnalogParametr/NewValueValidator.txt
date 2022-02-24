@@ -1,0 +1,27 @@
+NewValueValidator.cs
+>AnalogParametr
+	>VisualFbs
+	
+
+	CLASS NewValueValidator
+	
+Поля:
+	
+											
+	public double		|		CurrentValue { get; set; }
+	public double 		|		Ll { get; set; } = Double.NaN;
+	public double		|		Hl { get; set; } = Double.NaN;
+	public double		|		MaxChange { get; set; } = Double.NaN;
+        public double		|		Value { get; private set; }
+        public string		|		measure { get; set; }
+        public bool		|		IsValid { get; private set; }
+        public string		|		ReasonInvalid { get; private set; }
+
+
+функции:
+	
+	public bool			|		Validate(string input)
+								-Валидация введенного числа 
+
+	private bool			|		Validate(double value)
+								-Валидация введенного значения

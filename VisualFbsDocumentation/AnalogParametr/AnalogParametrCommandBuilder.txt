@@ -1,0 +1,14 @@
+AnalogParametrCommandBuilder.cs
+>AnalogParametr
+	>VisualFbs
+	
+
+	PUBLIC CLASS AnalogParameterCommandsBuilder: StandartCommandsBuilder
+	
+
+функции:
+	
+	public 							|		AnalogParameterCommandsBuilder(VisualFBConnector fbConnector) : base										(fbConnector)
+											-Пустая функция
+	public override ICommand				|		CreateSpecificCommand(CommandItem item)
+											-создание команды установки для FBConnector

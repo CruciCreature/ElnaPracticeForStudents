@@ -1,0 +1,33 @@
+AnalogParametrConstants.cs
+>AnalogParametr
+	>VisualFbs
+
+Поля:  
+
+    class pins:
+    
+        public const int		|		Value = 10
+        public const int		|		Target = 11
+        public const int		|		MinVal = 12
+        public const int		|		MaxStep = 14
+
+        public const int		|		groupArchive = 103
+        public const int		|		outValue = 50
+
+    class Vpins:
+    
+        public const int		|		Value = 10
+        public const int		|		Target = 11
+
+        public const int		|		MinVal = 13;
+        public const int 		|		MaxVal = 14;
+        public const int 		|		MaxStep = 15;
+
+    class Events:
+    
+        public const int		|		 targetChanged = 1
+    
+
+    class Commands:
+    
+        public const uint		|		 changeTarget = 1

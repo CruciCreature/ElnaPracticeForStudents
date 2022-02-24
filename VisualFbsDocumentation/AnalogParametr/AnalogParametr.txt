@@ -1,0 +1,40 @@
+AnalogParametr.cs
+>AnalogParametr
+	>VisualFbs
+	
+
+	PUBLIC CLASS AnalogParametr: BaseIm
+	
+
+Поля:
+	
+											
+	public string 				|		measure {get;set}
+									-Единица измерения
+	
+	private string 				|		_smalTxt
+									-Короткое название
+											
+	private string				|		_longTxt = ""
+									-Имя объекта
+											
+	public new string 			|		longTxt { get; set; }
+									-проверяет на пустоту и задает значение 
+											
+	private string				|		_format = "0.0"
+									-Формат значения
+											
+	public string				|		format { get; set; }
+									-Присваивание значения формата
+											
+	public double				|		cmdTimer { get; set; } = 50
+									-Время задержки подачи команды
+	
+Открытые функции:
+	
+	public override				|		SpecialCommandDescriptor[] getSpecialCommands()
+									-замена значения
+	protected override void			|		ParseStatus(IntParser status, DateTime timeStamp)
+									-Парсирование статуса пинов и присваивание визуальным пинам значений
+	protected override void			|		VisualCmdReseived(CommandDto cmd, JToken parameters)
+									-Обработка и отправление команды
