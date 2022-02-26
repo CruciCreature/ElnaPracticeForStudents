@@ -1,0 +1,58 @@
+﻿BlinkerFb.cs
+>BlinkerFB
+	>VisualFbs
+	
+
+	CLASS BlinkerFb: VisualFBBase 
+	
+
+Поля:
+	
+											
+	private string				|		_messageText = ""
+									-Переменная для текстового сообщения о состоянии сигнала 
+	
+	public string				|		messageString
+									-Переменная для принятия и передачи значения _messageText 
+											
+	public int				|		bitNum { get; set; } = 0
+									-Номер бита
+											
+	public bool				|		noAck { get; set; } = false
+									-Переменная квитируемости
+											
+	public bool				|		invertPin { get; set; } = false
+									-Переменная Инвертирования сигнала
+											
+	public enum FbNameGet			|		fbNameType { get; set; }
+									-Выбор типа именования ФБ в сообщениях
+											
+	public string				|		FbNameForEvent { get; set; }
+									-Переменная для имени экземпляра в событиях
+
+	public StateNameTypedObjectGet		|		StateNameTypedObjectType { get; set; }
+									-Задает правила добавления имени экземпляра ФБ в журнал сообщений, для типизированных объектов
+											
+	public string				|		smalTxt { get; set; }
+									-Короткое название имени объекта
+											
+	private string				|		_longTxt = ""
+									-Переменная для имени объекта											
+	public int				|		stateIdTypedObject
+									-Переменная идентификатора объекта											
+	public string				|		stateName
+									-имя экземпляра объекта типизированного ФБ											
+	public string				|		fullFbNameToMsg
+									-переменная общего имени ФБ
+	
+
+Функции:
+
+	protected override void			|		UpdateData()
+									-Обновление данных и проверка сигнала пинов
+
+	protected override Type[]		|		GetPropPages()
+									-Извлечение обработка и добавление данных массива
+
+	protected override void			|		protected override void
+									-Вызов панели управления, проверка типизированности и формирование сообщения экземпляра для журнала
