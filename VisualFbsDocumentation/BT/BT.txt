@@ -1,0 +1,22 @@
+BT.cs
+>BT
+	>VisualFbs
+	
+
+	PUBLIC CLASS BT: BaseIm
+	
+Поля:
+	
+	private const doubleI			|		blinkFreq = 2
+									-запись логов
+	
+Открытые функции:
+	
+	protected override void			|		ToRuntime()
+									-Запуск рабочего цикла
+	protected override void			|		OnLoadComplete()
+									-вызов функции полной загрузки base.OnLoadComplete() 
+	public override				|		SpecialCommandDescriptor[] getSpecialCommands()
+									-получение команд дескриптора 
+	protected override void			|		ParseStatus(IntParser status, DateTime timeStamp)
+									-Парсирование состояния визуальных пинов, присваивание значений констант, создание событий статуса работы 

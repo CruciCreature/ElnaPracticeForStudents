@@ -1,0 +1,62 @@
+BTControlConstants.cs
+>BT
+	>VisualFbs
+
+Поля: 
+
+public enum OnStatuses :
+
+	STATUSNODEFINED = 0
+        STATUSNORMAL = 1
+        STATUSWARNING = 2
+        STATUSFIRE = 3
+        STATUSREPAIR = 4
+	STATUSERROR = 5
+
+enum OnStatusesCMD : uint 
+    
+	CMDOPEN = 1
+        CMDCLOSE = 2
+        CMDRESET = 3
+    
+class pins:
+
+        public const int	|	pinStatus = 1
+        public const int	|	pinCommand = 2
+        public const int	|	pout_1 = 3
+        public const int	|	pout_2 = 4
+        public const int	|	pout_3 = 5
+        public const int	|	pout_4 = 6
+        public const int	|	pout_5 = 7
+        public const int	|	pout_6 = 8
+    
+class Vpins:
+    
+	public const int	|	StatusBody = 10
+        public const int	|	Ns = 12
+        public const int	|	WarningPoverOff = 19
+        public const int	|	Warning = 31
+        public const int	|	No_OPC_operation = 32
+        public const int	|	WarningCMDError = 33
+        public const int	|	StatusCMD = 34
+    
+class Events:
+    
+        public const int	|		 Normal = 10
+        public const int	|		 Warning = 11
+        public const int	|		 Fire = 12
+        public const int	|		 Repair = 13
+        public const int	|		 Error = 14
+        public const int	|		 WarningPoverOff = 19
+
+class visualCommands:
+    
+        public const uint	|		 CmdOpen = 1
+        public const uint	|		 CmdClose = 2
+        public const uint	|		 CmdReset = 3
+
+class Commands:
+    
+        public const uint	|		 CmdOpen = 1
+        public const uint	|		 CmdClose = 2
+        public const uint	|		 CmdReset = 3

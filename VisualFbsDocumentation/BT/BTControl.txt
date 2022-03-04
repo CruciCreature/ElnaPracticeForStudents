@@ -1,0 +1,59 @@
+BTControl.cs
+>BT
+	>VisualFbs
+	
+
+	PUBLIC CLASS BTControl : VisualWindowlessControlBase
+	
+Поля:
+	
+											
+	uint						|		_percent = 80
+										-Велечина области в процентах
+	public enum 					|		Orientation {top,bottom,left,right}
+										-Константы ориентации
+	public enum 					|		Detector {BTF,BTK,BTH,BTM,BTMG,GA_CH4,GA_H2,BIAS,BIAL}
+										-Константы типа устройства
+	private OnStatuses	 			|		statusBody
+										-переменная статуса 
+	private bool					|		ns
+										-переменная отсутсвия сигнала
+	private bool					|		_blinkState
+										-формат значения 
+	private const int				|		contourLineWidth = 2
+										-переменная ширины линии контура
+	protected long					|		stateIdOfTypedObject
+										-переменная id типизированного объекта 
+	[NonSerialized] private BaseControlWnd		|		wnd
+										-переменная окна контроля
+	[NonSerialized] private CommandsController	|		Commands
+										-переменная команд контроллера
+	
+функции:
+	
+	private void				|		updateData()
+									- Присвоение переменным "statusBody" и "ns" значениий, если коннектор работает в дизайн моде. Присваивание id состяния для "stateIdOfTypedObject"  
+
+	protected override void			|		OnPaint(PaintEventArgs e)
+									-Отрисовка
+
+	private void				|		drawBody(Graphics g, float width, float height)
+									-Описание графического элемента "тела крана"
+
+	public override				|		Rectangle Bounds {get}{set}
+									-Проверка равенства сторон отрисовки поля
+
+	private void				|		sendCmdOn(object sender, EventArgs e)
+									-Функция команды включения 
+
+	private void				|		sendCmdOff(object sender, EventArgs e)
+									-Функция команды выключения 
+
+	private void				|		sendCmdReset(object sender, EventArgs e)
+									-Функция команды обновления
+
+	protected override void			|		OnVisibleChanged(bool visible)
+									-Обновление или закрытие окна при изменениях
+
+	protected override void			|		OnMouseDown(MouseEventArgs me)
+									-Функция открытия окна
